@@ -13,29 +13,55 @@
         <p:dashboard id="board" model="#{dashboardView.model}">
             <p:ajax event="reorder" listener="#{dashboardView.handleReorder}" update="msgs" />
  
-            <p:panel id="sports" header="Sports">
-                <h:outputText value="Sports Content" />
-                <p:chart type="metergauge" model="#{chartView.meterGaugeModel1}" style="width:400px;height:250px" />
+            <p:panel id="meterGauge" header="Gauge">
+                <h:outputText value="Gauge Content" />
+                <p:chart type="metergauge" model="#{chartView.meterGaugeModel1}" style="width:400px;height:250px" />                
+            </p:panel>
+ 
+            <p:panel id="meterGauge1" header="Gauge1">
+                <h:outputText value="Gauge Content1" />            
                 <p:chart type="metergauge" model="#{chartView.meterGaugeModel2}" style="width:400px;height:250px" />
             </p:panel>
+            
+            <p:panel id="lineChart" header="Line">
+                <h:outputText value="Line Content" />
+                <p:chart type="line" model="#{barView.animatedModel1}" style="width:400px;" />                
+            </p:panel>                    
  
-            <p:panel id="finance" header="Finance">
-                <h:outputText value="Finance Content" />
-                <p:chart type="line" model="#{barView.animatedModel1}" style="width:400px;" />
-                <p:chart type="bar" model="#{barView.animatedModel2}" style="width:400px;" />
+            <p:panel id="barChart"  header="Bar">
+                <h:outputText value="Bar Content" />
+                <p:chart type="bar" model="#{barView.animatedModel2}" style="width:400px;" />                
             </p:panel>
  
-            <p:panel id="lifestyle" header="Lifestyle">
-                <h:outputText value="Lifestyle Content"  />
-                
+            <p:panel id="simplePie" header="Simple pie">
+                <h:outputText value="Simple Pie Content Content" />
+                <p:growl id="growl" showDetail="true" />                
+                    <p:chart type="pie" model="#{pieView.pieModel1}" style="width:400px;height:300px">
+                        <p:ajax event="itemSelect" listener="#{pieView.itemSelect}" update="growl" />
+                    </p:chart>                                   
             </p:panel>
  
-            <p:panel id="weather" header="Weather">
-                <h:outputText value="Weather Content" />
+            <p:panel id="barChart1" header="Bar Chart 1">
+                <h:outputText value="Bar Chart1 Content" />                
+                <p:chart type="bar" model="#{pieView.barModel}" style="width:400px;height:300px">
+                        <p:ajax event="itemSelect" listener="#{pieView.itemSelect}" update="growl" />
+                </p:chart>                 
             </p:panel>
- 
-            <p:panel id="politics" header="Politics">
-                <h:outputText value="Politics Content" />
+            
+            <p:panel id="donutChart" header="Donut Chart">
+                <h:outputText value="Donut Chart Content" />
+                <p:chart type="donut" model="#{donutView.donutModel2}" style="width:400px;height:300px" />
+            </p:panel>
+            
+            <p:panel id="liveChart" header="Live Chart">
+                <h:outputText value="Live Chart Content" />
+<!--                <p:poll interval="3" update="votes" />
+                <p:chart id="votes" type="pie" model="#{liveView.livePieModel}" style="width:400px;height:300px"/>-->
+            </p:panel>
+            
+            <p:panel id="multiAxisChart" header="Multi Axis Chart">
+                <h:outputText value="Multi Axis Chart Content" />
+                <p:chart type="line" model="#{multiAxisView.multiAxisModel}" style="height:400px;"/>
             </p:panel>
         </p:dashboard>
  
