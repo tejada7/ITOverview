@@ -21,10 +21,13 @@
  
             <p:panel id="finance" header="Finance">
                 <h:outputText value="Finance Content" />
+                <p:chart type="line" model="#{barView.animatedModel1}" style="width:400px;" />
+                <p:chart type="bar" model="#{barView.animatedModel2}" style="width:400px;" />
             </p:panel>
  
             <p:panel id="lifestyle" header="Lifestyle">
                 <h:outputText value="Lifestyle Content"  />
+                
             </p:panel>
  
             <p:panel id="weather" header="Weather">
@@ -41,4 +44,3 @@
 
     </h:body>
 </html>
-
