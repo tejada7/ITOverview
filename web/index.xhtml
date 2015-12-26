@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
         <h:outputStylesheet name="./bootstrap/css/bootstrap.css"/>
@@ -12,7 +13,7 @@
     </h:head>   
     
     
-    <header class="item header padding-top-20" id="header">
+    <header class="item header padding-top-20" id="header1" style="padding-bottom: 0px;">
 
         <div class="wrapper">
 
@@ -35,13 +36,51 @@
                         </ul> 		      
                         <ul class="nav navbar-nav navbar-right">
                             <li class="propClone">
-                                <a href="#">Login <span class="fa fa-lock"></span></a>
+                                        <a href="#">Login <span class="fa fa-lock">
+                                                <!--Start Login-->
+                <h:form>            
+                    <h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" title="login">
+                        <p:graphicImage name="./images/login.png" />
+                    </h:outputLink>
+
+                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+                    <p:dialog header="Login" widgetVar="dlg" resizable="false">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <h:outputLabel for="username" value="Username:" />
+                            <p:inputText id="username" value="#{userLoginView.username}" required="true" label="username" />
+
+                            <h:outputLabel for="password" value="Password:" />
+                            <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
+
+                            <f:facet name="footer">
+                                <p:commandButton value="Login" update="growl" actionListener="#{userLoginView.login}"
+                                                 oncomplete="handleLoginRequest(xhr, status, args)" />
+                            </f:facet>  
+                        </h:panelGrid>
+                    </p:dialog>
+                </h:form>
+
+                <script type="text/javascript">
+                    function handleLoginRequest(xhr, status, args) {
+                        if(args.validationFailed || !args.loggedIn) {
+                            PF('dlg').jq.effect("shake", {times:5}, 100);
+                        }
+                        else {
+                            PF('dlg').hide();
+                            $('#loginLink').fadeOut();
+                        }
+                    }
+                </script>
+                <!--End Login-->
+                                                
+                                                
+                                    </span></a>
                             </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
-                </nav>
-
-
+                </nav>                                                                
+                
             </div><!-- /.container -->
 
         </div><!-- /.wrapper -->
@@ -50,7 +89,7 @@
     <h:body>
         
             
-                <div class="row well">
+                <div class="container well">
                     <div class="col-lg-12">
 
                         <h:form>
@@ -61,14 +100,14 @@
 
                                 <p:panel id="meterGauge" header="Gauge">
                                     <h:outputText value="Gauge Content" />
-                                    <p:chart type="metergauge" model="#{chartView.meterGaugeModel1}" style="width:400px;height:250px" />                
+                                    <p:chart type="metergauge" model="#{chartView.meterGaugeModel1}"  style="width:400px;height:250px" />                
                                 </p:panel>
 
                                 <p:panel id="meterGauge1" header="Gauge1">
                                     <h:outputText value="Gauge Content1" />            
                                     <p:chart type="metergauge" model="#{chartView.meterGaugeModel2}" style="width:400px;height:250px" />
                                 </p:panel>
-
+                                
                                 <p:panel id="lineChart" header="Line">
                                     <h:outputText value="Line Content" />
                                     <p:chart type="line" model="#{barView.animatedModel1}" style="width:400px;" />                
@@ -185,7 +224,7 @@
         <h:outputScript name="./js/jquery.placeholder.js"/>        
         <h:outputScript name="./js/jquery.nivo.slider.pack.js"/>        
         <h:outputScript name="./js/application.js"/>        
-        <h:outputScript name="./js/over.js"/>                
+        <h:outputScript name="./js/over.js"/>  -->              
         <script>
 	$(function(){
 		
@@ -199,7 +238,7 @@
 		}
 		
 	})
-	</script>-->
+	</script>
         
         <!--// END Footer 1-1 --><!-- /#page -->
     </h:body>
