@@ -4,6 +4,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import javax.servlet.http.HttpSession;
  
 import org.primefaces.context.RequestContext;
  
@@ -13,6 +14,8 @@ public class UserLoginView {
     private String username;
      
     private String password;
+    
+    private boolean loggedIn = false;
  
     public String getUsername() {
         return username;
@@ -36,14 +39,26 @@ public class UserLoginView {
         boolean loggedIn = false;
          
         if(username != null && username.equals("admin") && password != null && password.equals("admin")) {
-            loggedIn = true;
+            loggedIn = true;            
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", username);
         } else {
-            loggedIn = false;
+            loggedIn = false;            
             message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Invalid credentials");
         }
          
         FacesContext.getCurrentInstance().addMessage(null, message);
         context.addCallbackParam("loggedIn", loggedIn);
+        
+        //Redirecting to welcome page for any logged-in user
+        /*if (loggedIn) {
+            context.addCallbackParam("view", "welcomePrimefaces");                        
+        } */                    
     }   
+    
+    public void logOut(){
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+                .getExternalContext().getSession(false);
+        session.invalidate();
+        loggedIn = false;
+    }
 }
