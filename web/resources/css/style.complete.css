@@ -12756,7 +12756,8 @@ div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline
 
     .content-block {
         width: 100%;
-        padding: 60px 0 60px 0;
+        /*padding: 60px 0 60px 0;*/
+        padding: 0px 0 60px 0;
         z-index: 100;
         position: relative;
         background-color: #ffffff;

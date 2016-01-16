@@ -155,3 +155,23 @@ header .navbar-white a {
 	height: 100%;
 	background: none;
 }
+
+.big{
+	width: 110px;
+	height: 200px;
+}
+
+.cable {
+	padding-top: 30px;
+	width: 100px;
+}
+
+.well1 {
+	 background-color: rgba(52, 152, 219, 0.82);
+}
+
+object .pole {
+	width: 200px;
+	height: 100px;
+	padding-top: 20px;	
+}
