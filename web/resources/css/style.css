@@ -163,15 +163,20 @@ header .navbar-white a {
 
 .cable {
 	padding-top: 30px;
-	width: 100px;
+	width: 122px;
 }
 
 .well1 {
-	 background-color: rgba(52, 152, 219, 0.82);
+	background-color: rgba(52, 152, 219, 0.82);
 }
 
 object .pole {
-	width: 200px;
-	height: 100px;
+	/*width: 100%;*/
+	/*height: 100px;*/
 	padding-top: 20px;	
+}
+
+div .nopadding{
+	padding-right: 0px;
+	padding-left: 0px;
 }

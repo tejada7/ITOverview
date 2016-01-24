@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ftm.test;
+package com.ftm.itoverview.view;
 
 import javax.annotation.PostConstruct;
 import java.io.Serializable;

@@ -30,7 +30,7 @@
 	@keyframes beat-warning {
 		0%{ fill: #FF0000;}		
 		50%{ fill: #FD9E01;}
-		100%{ fill: #BF3000;}
+		100%{ fill: #F8F831;}
 	}
 
 	@keyframes shake {

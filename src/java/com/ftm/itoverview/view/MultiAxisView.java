@@ -1,4 +1,4 @@
-package com.ftm.test;
+package com.ftm.itoverview.view;
 
 import javax.annotation.PostConstruct;
 import java.io.Serializable;

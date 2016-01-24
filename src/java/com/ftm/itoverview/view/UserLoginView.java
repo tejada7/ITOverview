@@ -1,7 +1,11 @@
-package com.ftm.test;
+package com.ftm.itoverview.view;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.servlet.http.HttpSession;
@@ -16,6 +20,8 @@ public class UserLoginView {
     private String password;
     
     private boolean loggedIn = false;
+    
+    private String page;
  
     public String getUsername() {
         return username;
@@ -37,23 +43,24 @@ public class UserLoginView {
         RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage message = null;
         boolean loggedIn = false;
-         
-        if(username != null && username.equals("admin") && password != null && password.equals("admin")) {
+        String page = "";
+        
+        if(username != null && username.equals("feeder") && password != null && password.equals("feeder")) {
+            page = "http://localhost:8080/ITOverview/faces/poles.xhtml";
             loggedIn = true;            
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", username);
-        } else {
+        } else if(username != null && username.equals("dashboard") && password != null && password.equals("dashboard")) { 
+            page = "http://localhost:8080/ITOverview/faces/feeder.xhtml";
+            loggedIn = true;            
+            message = new FacesMessage(FacesMessage.SEVERITY_INFO, "feeder", username);
+        } else {        
             loggedIn = false;            
             message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Invalid credentials");
-        }
-         
+        }         
         FacesContext.getCurrentInstance().addMessage(null, message);
         context.addCallbackParam("loggedIn", loggedIn);
-        
-        //Redirecting to welcome page for any logged-in user
-        /*if (loggedIn) {
-            context.addCallbackParam("view", "welcomePrimefaces");                        
-        } */                    
-    }   
+        context.addCallbackParam("page", page);
+    }
     
     public void logOut(){
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
