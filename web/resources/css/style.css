@@ -167,7 +167,10 @@ header .navbar-white a {
 }
 
 .well1 {
-	background-color: rgba(52, 152, 219, 0.82);
+	
+        /*background: transparent url('../img/pattern.png') repeat top left;*/
+        /*background-color: rgba(52, 152, 219, 0.82);*/
+        background-color: rgba(111, 161, 194, 0.82);
 }
 
 object .pole {
@@ -186,10 +189,16 @@ div .toppadding{
     padding-top: 50px;    
 }
 
-div .larger-cable1{
-    width: 380px;   
-    left: 610px;
-    top: 180px;
+div .larger-cable{
+    padding-top: 200px; 
+    position: absolute; 
+    z-index: 1;
+    width: 370px;      
+}
+
+div .larger-cable.cable1{
+    left: 625px;
+    top: 160px;
     behavior:url(-ms-transform.htc);
     /* Firefox */
     -moz-transform:rotate(130deg);
@@ -205,10 +214,9 @@ div .larger-cable1{
     -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; 
 }
 
-div .larger-cable2{
-    width: 380px;   
-    left: 610px;
-    top: 180px;
+div .larger-cable.cable2{
+    left: 730px;
+    top: 160px;
     behavior:url(-ms-transform.htc);
     /* Firefox */
     -moz-transform:rotate(130deg);
@@ -224,40 +232,40 @@ div .larger-cable2{
     -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; 
 }
 
-div .larger-cable3{
-    width: 380px;   
+div .larger-cable.cable3{
+    width: 300px;
     left: 610px;
-    top: 180px;
+    top: 330px;
     behavior:url(-ms-transform.htc);
     /* Firefox */
-    -moz-transform:rotate(130deg);
+    -moz-transform:rotate(65deg);
     /* Safari and Chrome */
-    -webkit-transform:rotate(130deg);
+    -webkit-transform:rotate(65deg);
     /* Opera */
-    -o-transform:rotate(130deg);
+    -o-transform:rotate(65deg);
     /* IE9 */
-    -ms-transform:rotate(130deg);
+    -ms-transform:rotate(65deg);
     /* IE6,IE7 */
     filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
     /* IE8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; 
 }
 
-div .larger-cable4{
-    width: 380px;   
-    left: 610px;
-    top: 180px;
+div .larger-cable.cable4{
+    width: 300px;
+    left: 720px;
+    top: 330px;
     behavior:url(-ms-transform.htc);
     /* Firefox */
-    -moz-transform:rotate(130deg);
+    -moz-transform:rotate(65deg);
     /* Safari and Chrome */
-    -webkit-transform:rotate(130deg);
+    -webkit-transform:rotate(65deg);
     /* Opera */
-    -o-transform:rotate(130deg);
+    -o-transform:rotate(65deg);
     /* IE9 */
-    -ms-transform:rotate(130deg);
+    -ms-transform:rotate(65deg);
     /* IE6,IE7 */
     filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
     /* IE8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; 
-}
+}   
