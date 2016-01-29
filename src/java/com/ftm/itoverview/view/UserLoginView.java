@@ -46,11 +46,11 @@ public class UserLoginView {
         String page = "";
         
         if(username != null && username.equals("feeder") && password != null && password.equals("feeder")) {
-            page = "http://localhost:8080/ITOverview/faces/poles.xhtml";
+            page = "http://localhost:8080/ITOverview/faces/distribution.xhtml";
             loggedIn = true;            
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", username);
         } else if(username != null && username.equals("dashboard") && password != null && password.equals("dashboard")) { 
-            page = "http://localhost:8080/ITOverview/faces/feeder.xhtml";
+            page = "http://localhost:8080/ITOverview/faces/dashboard.xhtml";
             loggedIn = true;            
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "feeder", username);
         } else {        
