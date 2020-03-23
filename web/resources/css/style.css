@@ -193,12 +193,12 @@ div .larger-cable{
     padding-top: 200px; 
     position: absolute; 
     z-index: 1;
-    width: 370px;      
+    width: 380px;      
 }
 
 div .larger-cable.cable1{
-    left: 625px;
-    top: 160px;
+    left: 620px;
+    top: 170px;
     behavior:url(-ms-transform.htc);
     /* Firefox */
     -moz-transform:rotate(130deg);
@@ -215,8 +215,8 @@ div .larger-cable.cable1{
 }
 
 div .larger-cable.cable2{
-    left: 730px;
-    top: 160px;
+    left: 725px;
+    top: 170px;
     behavior:url(-ms-transform.htc);
     /* Firefox */
     -moz-transform:rotate(130deg);
@@ -235,7 +235,7 @@ div .larger-cable.cable2{
 div .larger-cable.cable3{
     width: 300px;
     left: 610px;
-    top: 330px;
+    top: 350px;
     behavior:url(-ms-transform.htc);
     /* Firefox */
     -moz-transform:rotate(65deg);
@@ -253,8 +253,8 @@ div .larger-cable.cable3{
 
 div .larger-cable.cable4{
     width: 300px;
-    left: 720px;
-    top: 330px;
+    left: 715px;
+    top: 350px;
     behavior:url(-ms-transform.htc);
     /* Firefox */
     -moz-transform:rotate(65deg);
